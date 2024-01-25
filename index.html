@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHOP</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script> <!--Jquery-->
+    <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>        <!--swal-->
+    <link rel="stylesheet" href="CSS/style.css">           
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"> <!--font-->
+</head>
+<body>
+    
+    <nav>
+        <div class="nav-contriner">
+            <a href="index.html">
+                <img src="imgs/scaramouch1-removebg-preview.png" class="logo-nav">
+            </a>
+            <div class="nav-profile">
+                <p class="nav-profile-name">SHOPNAME</p>
+                <div onclick="opencart()" class="nav-profile-cart">
+                    <i class="fas fa-cart-shopping"></i>
+                    <div id="cartcount" class="cartcount" style="display: none;">
+                        0
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="contriner">
+        <div class="sidebar">
+            <input onkeyup="searchmenu(this)" id="txt_scarch"  type="text" class="search-bar" placeholder=" Search something... ">
+            <a onclick="searchproduct('all')" class="sidebar-item">
+                All product
+            </a>
+            <a onclick="searchproduct('hat')" class="sidebar-item">
+                Hat
+            </a>
+            <a onclick="searchproduct('shoe')" class="sidebar-item">
+                Shoe
+            </a>
+            <a onclick="searchproduct('shirt')" class="sidebar-item">
+                Shirt
+            </a>
+ 
+        </div>
+        <div id= "productlist" class="content">
+
+            
+        </div>
+    </div>
+
+    <div id = "modalDesc" class="modal" style="display: none;">
+        <div onclick="closeModal()" class="modal-bg"></div>
+        <div class="modal-page">
+            <h2>Detail</h2>
+            <br>
+            <div class="modal-des-content">
+                <img id="mdd-img" class="modal-des-img" src="https://images.unsplash.com/photo-1515955656352-a1fa3ffcd111?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="">
+                <div class="modal-des-detail">
+                    <p id="mdd-name" style="font-size: 1.5vw;">Product name</p>
+                    <p id="mdd-price" style="font-size: 1.2vw;">Product price</p><br>
+                    <p id="mdd-desc" style="font-size: 0.8vw; color: #adadad;">Product description</p>
+                    <br>
+                    <div class="btn-control">
+                        <button onclick="closeModal()" class="btn">
+                            Close
+                        </button>
+                        <button onclick="addtocart()" class="btn btn-buy">
+                            Add to cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div  onclick="openCart()" id="modalCart" class="modal" style="display: none;">
+        <div onclick="closeModal()" class="modal-bg"></div>
+        <div class="modal-page">
+            <h2>My cart</h2>
+            <br>
+            <div id="mycart" class="cartlist">
+
+                
+            </div>
+            <div class="btn-control">
+                <button  onclick="closeModal()" class="btn">
+                    Cancal
+                </button>
+                <button class="btn btn-buy">
+                    Buy
+                </button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
